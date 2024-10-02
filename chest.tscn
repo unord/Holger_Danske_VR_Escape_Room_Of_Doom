@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmd15bxn73peu"]
+
+[ext_resource type="Script" path="res://Chest.gd" id="1_2q3rg"]
+[ext_resource type="Script" path="res://Padlock.gd" id="2_tuiwd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pcnd3"]
+height = 1.0
+radius = 0.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dd5vm"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwm7j"]
+size = Vector3(1, 0.25, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_74sx3"]
+size = Vector3(1, 0.25, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ao8y"]
+size = Vector3(0.1, 0.2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mn87u"]
+size = Vector3(0.1, 0.2, 0.1)
+
+[node name="Chest" type="Node3D"]
+
+[node name="Lid" type="Node3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Lid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0477421, 0)
+collision_layer = 2
+freeze = true
+script = ExtResource("1_2q3rg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lid/RigidBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.185921, 0)
+shape = SubResource("CylinderShape3D_pcnd3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lid/RigidBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.177254, 0)
+mesh = SubResource("CylinderMesh_dd5vm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_bwm7j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_74sx3")
+
+[node name="PadLock" type="Node3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="PadLock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.322577)
+collision_layer = 2
+script = ExtResource("2_tuiwd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PadLock/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235983, 0.0240639)
+shape = SubResource("BoxShape3D_4ao8y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PadLock/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.221462, 0)
+mesh = SubResource("BoxMesh_mn87u")
+
+[connection signal="lock_open" from="PadLock/RigidBody3D" to="Lid/RigidBody3D" method="_on_rigid_body_3d_lock_open"]

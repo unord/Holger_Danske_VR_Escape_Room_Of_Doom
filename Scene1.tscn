@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://cilcvm4br1yu"]
+
+[ext_resource type="PackedScene" uid="uid://djsvlshccyjqq" path="res://RUM1.glb" id="1_2frc1"]
+[ext_resource type="PackedScene" uid="uid://dfyqyvxfx44hr" path="res://player.tscn" id="2_6n5bg"]
+[ext_resource type="PackedScene" uid="uid://cmd15bxn73peu" path="res://chest.tscn" id="3_s0mkq"]
+[ext_resource type="PackedScene" uid="uid://cyo2sr6muwo25" path="res://statuen.tscn" id="4_2kt8t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywqx2"]
+size = Vector3(4, 0.5, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xq5yt"]
+size = Vector3(4, 3, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11alf"]
+size = Vector3(0.25, 3, 10)
+
+[node name="Scene1" type="Node3D"]
+
+[node name="PlayArea" type="StaticBody3D" parent="."]
+collision_layer = 15
+collision_mask = 0
+
+[node name="RUM1" parent="PlayArea" instance=ExtResource("1_2frc1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="GulvCollision" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_ywqx2")
+
+[node name="WallFrontCollision" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+shape = SubResource("BoxShape3D_xq5yt")
+
+[node name="WallRightCollision" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1, 0)
+shape = SubResource("BoxShape3D_11alf")
+
+[node name="WallLeftCollision" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 1, 0)
+shape = SubResource("BoxShape3D_11alf")
+
+[node name="WallBackCollision" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+shape = SubResource("BoxShape3D_xq5yt")
+
+[node name="Player" parent="." instance=ExtResource("2_6n5bg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0700847, 0.936595, 3.55969)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89977, 0)
+
+[node name="Chest" parent="." instance=ExtResource("3_s0mkq")]
+transform = Transform3D(-0.0576512, 0, -0.998337, 0, 1, 0, 0.998337, 0, -0.0576512, 1.63867, 0.538671, 2.20996)
+
+[node name="Statuen" parent="." instance=ExtResource("4_2kt8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132256, 0.175687, -3.33422)

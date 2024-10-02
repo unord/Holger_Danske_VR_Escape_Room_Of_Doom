@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfyqyvxfx44hr"]
+
+[ext_resource type="Script" path="res://player-movement.gd" id="1_fo3ty"]
+[ext_resource type="PackedScene" uid="uid://bhdlhftohy5aq" path="res://untitled 6.glb" id="2_xx0yq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfw40"]
+radius = 0.25
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6qaln"]
+radius = 0.25
+height = 1.6
+
+[node name="Player" type="CharacterBody3D"]
+physics_interpolation_mode = 1
+collision_mask = 2
+script = ExtResource("1_fo3ty")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0463322)
+shape = SubResource("CapsuleShape3D_gfw40")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+visible = false
+mesh = SubResource("CapsuleMesh_6qaln")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.618763, -0.152692)
+fov = 90.0
+
+[node name="untitled 6" parent="Pivot" instance=ExtResource("2_xx0yq")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0.223046, 0)
