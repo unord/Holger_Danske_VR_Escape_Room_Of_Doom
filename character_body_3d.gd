@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
-
-var speed = 5
-var point = Vector3(52,12,0)
+var speed = 15
+var point = Vector3(52,12,10)
 
 func _process(delta):
 	
@@ -14,6 +13,6 @@ func _process(delta):
 	
 	else: 
 		direction = point - transform.origin
-	
-	velocity *= speed
+
+		velocity *= speed
 	move_and_slide()
