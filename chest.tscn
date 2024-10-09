@@ -65,5 +65,3 @@ shape = SubResource("BoxShape3D_4ao8y")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PadLock/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.221462, 0)
 mesh = SubResource("BoxMesh_mn87u")
-
-[connection signal="lock_open" from="PadLock/RigidBody3D" to="Lid/RigidBody3D" method="_on_rigid_body_3d_lock_open"]
