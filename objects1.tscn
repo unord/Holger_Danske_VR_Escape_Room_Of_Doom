@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5eyndop7qs5i"]
+
+[ext_resource type="PackedScene" uid="uid://c6d1s38os3fus" path="res://Bord.glb" id="1_alshh"]
+[ext_resource type="PackedScene" uid="uid://crlhgc2eo2tj" path="res://Stol (1).glb" id="2_o00ad"]
+[ext_resource type="PackedScene" uid="uid://de1d16nwweory" path="res://ølkrus.glb" id="3_4m5u2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6x3w"]
+size = Vector3(2.58661, 0.104675, 1.31122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7fuu"]
+size = Vector3(0.421875, 0.96022, 0.499146)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6dgku"]
+radius = 0.109348
+height = 0.256837
+
+[node name="Table mm" type="Node3D"]
+
+[node name="Bord" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bord"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641815, 0.598475, 0.00271609)
+shape = SubResource("BoxShape3D_k6x3w")
+
+[node name="Bord" parent="Bord" instance=ExtResource("1_alshh")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
+
+[node name="Stol1" type="RigidBody3D" parent="."]
+transform = Transform3D(0.452108, 0, 0.891963, 0, 1, 0, -0.891963, 0, 0.452108, -1.21245, 0, 0.869059)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stol1"]
+transform = Transform3D(1.00001, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1.00001, -0.150393, 0.445793, 0.0724492)
+shape = SubResource("BoxShape3D_k7fuu")
+
+[node name="Stol (1)" parent="Stol1" instance=ExtResource("2_o00ad")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Stol2" type="RigidBody3D" parent="Stol1"]
+transform = Transform3D(0.584222, 0, 0.811595, 0, 1, 0, -0.811595, 0, 0.584222, 0.295761, 0, 1.00172)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stol1/Stol2"]
+transform = Transform3D(1.00001, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1.00001, -0.150393, 0.445793, 0.0724492)
+shape = SubResource("BoxShape3D_k7fuu")
+
+[node name="Stol (1)" parent="Stol1/Stol2" instance=ExtResource("2_o00ad")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Ølkrus" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.872036, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ølkrus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279406, -0.00301522, 0.179662)
+shape = SubResource("CapsuleShape3D_6dgku")
+
+[node name="ølkrus" parent="Ølkrus" instance=ExtResource("3_4m5u2")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.279828, -0.000830591, 0.186296)

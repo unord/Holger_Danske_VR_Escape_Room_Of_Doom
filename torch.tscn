@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://sy44tfe3h3p"]
+
+[ext_resource type="PackedScene" uid="uid://c2tlcptv8ogxl" path="res://tORCH.glb" id="1_htj8w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s8thj"]
+radius = 0.146599
+height = 1.01318
+
+[node name="Torch" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.116065, 0)
+shape = SubResource("CapsuleShape3D_s8thj")
+
+[node name="tORCH" parent="StaticBody3D" instance=ExtResource("1_htj8w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.336454, 0)
+omni_range = 2.5

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj3llkfe27tud"]
+
+[ext_resource type="PackedScene" uid="uid://cdopjo5s8iwka" path="res://Krukke.glb" id="1_xsybh"]
+[ext_resource type="PackedScene" uid="uid://ceml4kdlcefia" path="res://Knogle kort.glb" id="2_jex77"]
+[ext_resource type="PackedScene" uid="uid://5h5wkb1x6s2q" path="res://Knogle lang.glb" id="3_3t7m1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_47nh5"]
+height = 0.616898
+radius = 0.37925
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jkdqx"]
+radius = 0.0655873
+height = 0.339629
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bug4"]
+radius = 0.0317903
+height = 0.676161
+
+[node name="objects3" type="Node3D"]
+
+[node name="Pot" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283352, 0)
+shape = SubResource("CylinderShape3D_47nh5")
+
+[node name="Krukke" parent="Pot" instance=ExtResource("1_xsybh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Knogle1" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.810263, 0.230176, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knogle1"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, -0.0359241, -0.0120701)
+shape = SubResource("CapsuleShape3D_jkdqx")
+
+[node name="Knogle kort" parent="Knogle1" instance=ExtResource("2_jex77")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="Nogle2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.781913, 0.34029, -0.0285843)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nogle2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.168588, 0)
+shape = SubResource("CapsuleShape3D_1bug4")
+
+[node name="Knogle lang" parent="Nogle2" instance=ExtResource("3_3t7m1")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 0, 0, 0)
