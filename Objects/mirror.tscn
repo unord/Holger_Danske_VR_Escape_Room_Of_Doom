@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj8tj50f8far3"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_68kuj"]
+[ext_resource type="PackedScene" uid="uid://d12u5np3ecw33" path="res://Objects/Mirror.glb" id="2_0cyn7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4sx7"]
+size = Vector3(0.095459, 0.674377, 0.328613)
+
+[node name="Mirror" instance=ExtResource("1_68kuj")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0123291, 0.29839, -0.0231934)
+shape = SubResource("BoxShape3D_i4sx7")
+
+[node name="Mirror" parent="." index="1" instance=ExtResource("2_0cyn7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.402455, -0.0398085, -0.439039)

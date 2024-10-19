@@ -66,6 +66,7 @@ func _ready():
 
 	# Construct the physics-bone shape
 	_bone_shape = CapsuleShape3D.new()
+
 	_bone_shape.margin = physics_hand.margin
 	_on_hand_scale_changed(XRServer.world_scale)
 

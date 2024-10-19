@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0y0hfqmhvxm"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_nvm16"]
+[ext_resource type="PackedScene" uid="uid://cdopjo5s8iwka" path="res://Objects/Krukke.glb" id="2_4thew"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8f7a7"]
+height = 0.29976
+radius = 0.190749
+
+[node name="Pot" instance=ExtResource("1_nvm16")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13473, 0)
+shape = SubResource("CylinderShape3D_8f7a7")
+
+[node name="Krukke" parent="." index="1" instance=ExtResource("2_4thew")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

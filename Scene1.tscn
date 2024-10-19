@@ -1,26 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://cilcvm4br1yu"]
+[gd_scene load_steps=14 format=3 uid="uid://cilcvm4br1yu"]
 
 [ext_resource type="PackedScene" uid="uid://cmuu7488k1pp4" path="res://RUM.glb" id="1_hvdcx"]
-[ext_resource type="PackedScene" uid="uid://cmd15bxn73peu" path="res://chest.tscn" id="3_s0mkq"]
-[ext_resource type="PackedScene" uid="uid://cyo2sr6muwo25" path="res://statuen.tscn" id="4_2kt8t"]
+[ext_resource type="PackedScene" uid="uid://cmd15bxn73peu" path="res://Objects/chest1.tscn" id="3_s0mkq"]
+[ext_resource type="PackedScene" uid="uid://cyo2sr6muwo25" path="res://Objects/statuen.tscn" id="4_2kt8t"]
 [ext_resource type="PackedScene" uid="uid://c0jn8p5ysegkv" path="res://xr_scene.tscn" id="4_d1288"]
-[ext_resource type="PackedScene" uid="uid://c5eyndop7qs5i" path="res://objects1.tscn" id="5_jtxq3"]
-[ext_resource type="PackedScene" uid="uid://sy44tfe3h3p" path="res://torch.tscn" id="6_8m4eu"]
-[ext_resource type="PackedScene" uid="uid://cbeo61p4bldre" path="res://objects_2.tscn" id="7_o0xvt"]
-[ext_resource type="PackedScene" uid="uid://cj3llkfe27tud" path="res://objects_3.tscn" id="8_i0gxd"]
+[ext_resource type="PackedScene" uid="uid://c5eyndop7qs5i" path="res://Objects/objects1.tscn" id="5_jtxq3"]
+[ext_resource type="PackedScene" uid="uid://nue1f15bf8lv" path="res://Objects/torch.tscn" id="6_8m4eu"]
+[ext_resource type="PackedScene" uid="uid://cbeo61p4bldre" path="res://Objects/objects_2.tscn" id="7_o0xvt"]
+[ext_resource type="PackedScene" uid="uid://cj3llkfe27tud" path="res://Objects/objects_3.tscn" id="8_i0gxd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywqx2"]
-size = Vector3(4, 0.5, 8)
+size = Vector3(4, 0.1, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq5yt"]
-size = Vector3(4, 3, 0.25)
+size = Vector3(4, 10.1983, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_11alf"]
-size = Vector3(0.25, 3, 10)
+size = Vector3(0.25, 8.95261, 10)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kbi1m"]
 height = 1.0
 radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb4rk"]
+size = Vector3(4.21997, 0.217896, 8.20374)
 
 [node name="Scene1" type="Node3D"]
 
@@ -29,47 +32,50 @@ collision_layer = 15
 collision_mask = 0
 
 [node name="GulvCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 shape = SubResource("BoxShape3D_ywqx2")
 
 [node name="WallFrontCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18222, -4)
 shape = SubResource("BoxShape3D_xq5yt")
 
 [node name="WallRightCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10549, 2.22073, 0)
 shape = SubResource("BoxShape3D_11alf")
 
 [node name="WallLeftCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09173, 2.75557, 0)
 shape = SubResource("BoxShape3D_11alf")
 
 [node name="WallBackCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.41693, 4)
 shape = SubResource("BoxShape3D_xq5yt")
 
 [node name="RUM" parent="PlayArea" instance=ExtResource("1_hvdcx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayArea"]
+[node name="WellCollision" type="CollisionShape3D" parent="PlayArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389381, 0)
 shape = SubResource("CylinderShape3D_kbi1m")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11997, 0)
-omni_range = 15.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.00850534, 2.7426, -0.00426292)
 
-[node name="Chest" parent="." instance=ExtResource("3_s0mkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28788, 0.297945, -3.72344)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353193, 3.71654, -0.0330648)
+shape = SubResource("BoxShape3D_kb4rk")
+
+[node name="Chest1" parent="." instance=ExtResource("3_s0mkq")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.4626, 0.00566933, 3.67326)
 
 [node name="Statuen" parent="." instance=ExtResource("4_2kt8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130793, 0.105046, -3.33422)
 
 [node name="XR-Scene" parent="." instance=ExtResource("4_d1288")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.78679, 3.48408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.947268, 3.48408)
 
 [node name="Objects" parent="." instance=ExtResource("5_jtxq3")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 1.30343, 0.258075, 3.22337)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 1.50737, 0.199376, 3.31611)
 
 [node name="Torch1" parent="." instance=ExtResource("6_8m4eu")]
 transform = Transform3D(0.881287, 0.472582, 0, -0.472582, 0.881287, 0, 0, 0, 1, -1.82601, 1.08816, -2.37776)
@@ -81,7 +87,7 @@ transform = Transform3D(-0.881303, -0.472551, -8.74228e-08, -0.472551, 0.881303,
 transform = Transform3D(-3.8523e-08, -2.06559e-08, 1, -0.472551, 0.881303, 0, -0.881303, -0.472551, -4.37114e-08, -1.09573, 1.08816, 3.89983)
 
 [node name="objects2" parent="." instance=ExtResource("7_o0xvt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.694345, 1.28928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56709, 0.122732, -3.55633)
 
 [node name="objects3" parent="." instance=ExtResource("8_i0gxd")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 1.36494, 0, -3.49589)
+transform = Transform3D(0.0213087, 0, -0.999773, 0, 1, 0, 0.999773, 0, 0.0213087, 1.64067, 0.0128977, 1.10125)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmd15bxn73peu"]
+
+[ext_resource type="PackedScene" uid="uid://dfme5ordkiq81" path="res://Objects/Kiste1.glb" id="1_vbqkt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4paoh"]
+size = Vector3(1, 0.804199, 0.635681)
+
+[node name="Chest" type="Node3D"]
+
+[node name="Kiste1" parent="." instance=ExtResource("1_vbqkt")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392411, -0.00350952)
+shape = SubResource("BoxShape3D_4paoh")

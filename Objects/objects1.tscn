@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5eyndop7qs5i"]
+
+[ext_resource type="PackedScene" uid="uid://qqbrx3650byx" path="res://Objects/Bord1.glb" id="1_e6lme"]
+[ext_resource type="PackedScene" uid="uid://hkuj5ffsc4cw" path="res://Objects/chair.tscn" id="4_1vkqd"]
+[ext_resource type="PackedScene" uid="uid://d11makoivo5b1" path="res://Objects/flaske.tscn" id="4_837ah"]
+[ext_resource type="PackedScene" uid="uid://6hrol1otxtnw" path="res://Objects/mug.tscn" id="4_to6gg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6x3w"]
+size = Vector3(2.58661, 0.104675, 0.993821)
+
+[node name="Table mm" type="Node3D"]
+
+[node name="Bord" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bord"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.641815, 0.598475, -0.0117723)
+shape = SubResource("BoxShape3D_k6x3w")
+
+[node name="Bord1" parent="Bord" instance=ExtResource("1_e6lme")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Flaske" parent="." instance=ExtResource("4_837ah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313946, 0.771027, 0.264181)
+
+[node name="Chair" parent="." instance=ExtResource("4_1vkqd")]
+transform = Transform3D(0.988481, 0, 0.151347, 0, 1, 0, -0.151347, 0, 0.988481, -1.2722, 0, 0.499878)
+
+[node name="Chair2" parent="." instance=ExtResource("4_1vkqd")]
+transform = Transform3D(0.409557, 0, 0.912285, 0, 1, 0, -0.912285, 0, 0.409557, -0.0780272, 0, 0.600431)
+
+[node name="Mug" parent="." instance=ExtResource("4_to6gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63163, 0.717051, 0.14271)

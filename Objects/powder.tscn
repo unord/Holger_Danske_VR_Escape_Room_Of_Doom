@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcb3r20c2l7pc"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_tgp28"]
+[ext_resource type="PackedScene" uid="uid://cb08q2ektkgsr" path="res://Objects/Powder.glb" id="2_kmx7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7e4xq"]
+size = Vector3(0.111877, 0.058548, 0.109375)
+
+[node name="Powder" instance=ExtResource("1_tgp28")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000780344, 0.0143509, 0.0263672)
+shape = SubResource("BoxShape3D_7e4xq")
+
+[node name="Powder" parent="." index="1" instance=ExtResource("2_kmx7m")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0398901, 0, -0.0529741)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj3llkfe27tud"]
+
+[ext_resource type="PackedScene" uid="uid://l0y0hfqmhvxm" path="res://Objects/pot.tscn" id="1_ccsjb"]
+[ext_resource type="PackedScene" uid="uid://c7hn3qttmmeg8" path="res://Objects/knogle_1.tscn" id="2_wabm5"]
+[ext_resource type="PackedScene" uid="uid://xalea3m7hu10" path="res://Objects/knogle_2.tscn" id="3_2s5an"]
+[ext_resource type="PackedScene" uid="uid://brqkut78pgbk2" path="res://Objects/kiste2.glb" id="4_dipp3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rphc8"]
+size = Vector3(0.684082, 0.3927, 0.687225)
+
+[node name="objects3" type="Node3D"]
+
+[node name="Pot" parent="." instance=ExtResource("1_ccsjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183139, 0.429493, -0.0913551)
+
+[node name="Knogle2" parent="." instance=ExtResource("2_wabm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.781636, 0.307854, 0.218022)
+
+[node name="knogle_2" parent="." instance=ExtResource("3_2s5an")]
+transform = Transform3D(0.886551, 0, 0.462631, 0, 1, 0, -0.462631, 0, 0.886551, -0.875508, -0.0882397, 0.421149)
+
+[node name="Chest1" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chest1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000732422, 0.184387, 0.00712585)
+shape = SubResource("BoxShape3D_rphc8")
+
+[node name="kiste2" parent="Chest1" instance=ExtResource("4_dipp3")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)

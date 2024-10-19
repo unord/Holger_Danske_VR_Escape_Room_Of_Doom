@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d11makoivo5b1"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ngh2o"]
+[ext_resource type="PackedScene" uid="uid://6us7qc0m0m3x" path="res://Objects/flaskepost1.glb" id="2_4btpt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0ng18"]
+height = 4.58803
+radius = 0.952372
+
+[node name="Flaske" instance=ExtResource("1_ngh2o")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.232963, 0)
+shape = SubResource("CylinderShape3D_0ng18")
+
+[node name="flaskepost1" parent="." index="1" instance=ExtResource("2_4btpt")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

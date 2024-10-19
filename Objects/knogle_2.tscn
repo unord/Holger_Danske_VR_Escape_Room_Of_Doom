@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://xalea3m7hu10"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_rcgtf"]
+[ext_resource type="PackedScene" uid="uid://5h5wkb1x6s2q" path="res://Objects/Knogle lang.glb" id="2_6q8th"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emkm4"]
+radius = 0.032
+height = 0.676
+
+[node name="knogle_2" instance=ExtResource("1_rcgtf")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.77638, 0.515862, -0.0154962)
+shape = SubResource("CapsuleShape3D_emkm4")
+
+[node name="Knogle lang" parent="." index="1" instance=ExtResource("2_6q8th")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 0.781913, 0.34029, -0.0285843)

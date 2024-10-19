@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://hkuj5ffsc4cw"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_gxmgq"]
+[ext_resource type="PackedScene" uid="uid://dsxc5qio6ysgy" path="res://Objects/Chair.glb" id="2_uwgly"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_el24p"]
+size = Vector3(0.422, 0.96, 0.499)
+
+[node name="Chair" instance=ExtResource("1_gxmgq")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.452435, 0, 0.891798, 0, 1, 0, -0.891798, 0, 0.452435, 0.000820637, 0.448372, 0.000274897)
+shape = SubResource("BoxShape3D_el24p")
+
+[node name="Chair" parent="." index="1" instance=ExtResource("2_uwgly")]
+transform = Transform3D(0.226217, 0, 0.445899, 0, 0.5, 0, -0.445899, 0, 0.226217, -0.015, 0, -0.15539)

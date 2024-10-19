@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://6hrol1otxtnw"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ybhkc"]
+[ext_resource type="PackedScene" uid="uid://de1d16nwweory" path="res://Objects/ølkrus.glb" id="2_hy2yo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i48rl"]
+height = 0.212462
+radius = 0.0768752
+
+[node name="Mug" instance=ExtResource("1_ybhkc")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048095, 0.100899, 0.00841662)
+shape = SubResource("CylinderShape3D_i48rl")
+
+[node name="ølkrus" parent="." index="1" instance=ExtResource("2_hy2yo")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.00595993, 0.102453, 0.00852199)

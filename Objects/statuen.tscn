@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyo2sr6muwo25"]
+
+[ext_resource type="PackedScene" uid="uid://bxdk2ocorqr38" path="res://Objects/Throne1 5.glb" id="1_cijxv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf38v"]
+size = Vector3(1.5, 3, 1.5)
+
+[node name="Statuen" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17909, 0.0723137)
+shape = SubResource("BoxShape3D_yf38v")
+
+[node name="Throne1 5" parent="StaticBody3D" instance=ExtResource("1_cijxv")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.0486906, 0.59719, 0)
