@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsxc5qio6ysgy" path="res://Objects/Chair.glb" id="2_uwgly"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_el24p"]
+margin = 0.01
 size = Vector3(0.422, 0.96, 0.499)
 
 [node name="Chair" instance=ExtResource("1_gxmgq")]

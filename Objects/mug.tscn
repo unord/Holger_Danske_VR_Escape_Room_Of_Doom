@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://de1d16nwweory" path="res://Objects/ølkrus.glb" id="2_hy2yo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_i48rl"]
+margin = 0.01
 height = 0.212462
 radius = 0.0768752
 

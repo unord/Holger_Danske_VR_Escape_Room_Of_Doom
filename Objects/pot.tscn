@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cdopjo5s8iwka" path="res://Objects/Krukke.glb" id="2_4thew"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8f7a7"]
-height = 0.29976
-radius = 0.190749
+margin = 0.01
+height = 0.273629
+radius = 0.181575
 
 [node name="Pot" instance=ExtResource("1_nvm16")]
 

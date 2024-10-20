@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjp3t6no7ixhw"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_1aj58"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="2_ucqq7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xuo08"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2cqb"]
+albedo_color = Color(0.298039, 1, 0.419608, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_abfk5"]
+material = SubResource("StandardMaterial3D_q2cqb")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+
+[node name="Cylinder" groups=["Cylinder", "Geometry"] instance=ExtResource("1_1aj58")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_xuo08")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" groups=["Cylinder", "Geometry"]]
+mesh = SubResource("CylinderMesh_abfk5")
+
+[node name="GrabPointSnap" parent="." index="2" instance=ExtResource("2_ucqq7")]

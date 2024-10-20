@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cilcvm4br1yu"]
+[gd_scene load_steps=17 format=3 uid="uid://cilcvm4br1yu"]
 
 [ext_resource type="PackedScene" uid="uid://cmuu7488k1pp4" path="res://RUM.glb" id="1_hvdcx"]
 [ext_resource type="PackedScene" uid="uid://cmd15bxn73peu" path="res://Objects/chest1.tscn" id="3_s0mkq"]
@@ -8,15 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://nue1f15bf8lv" path="res://Objects/torch.tscn" id="6_8m4eu"]
 [ext_resource type="PackedScene" uid="uid://cbeo61p4bldre" path="res://Objects/objects_2.tscn" id="7_o0xvt"]
 [ext_resource type="PackedScene" uid="uid://cj3llkfe27tud" path="res://Objects/objects_3.tscn" id="8_i0gxd"]
+[ext_resource type="PackedScene" uid="uid://c58k6p2whrdof" path="res://Objects/pipes_puzzle2.tscn" id="9_beefc"]
+[ext_resource type="PackedScene" uid="uid://cfe1babf4ghhu" path="res://Objects/object_puzzle1.tscn" id="10_q36ml"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywqx2"]
 size = Vector3(4, 0.1, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq5yt"]
-size = Vector3(4, 10.1983, 0.25)
+size = Vector3(4, 5.82229, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_11alf"]
-size = Vector3(0.25, 8.95261, 10)
+size = Vector3(0.670898, 2.33202, 10)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kbi1m"]
 height = 1.0
@@ -25,10 +27,12 @@ radius = 0.8
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb4rk"]
 size = Vector3(4.21997, 0.217896, 8.20374)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1m4ft"]
+size = Vector3(1, 1, 5.81445)
+
 [node name="Scene1" type="Node3D"]
 
 [node name="PlayArea" type="StaticBody3D" parent="."]
-collision_layer = 15
 collision_mask = 0
 
 [node name="GulvCollision" type="CollisionShape3D" parent="PlayArea"]
@@ -44,11 +48,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10549, 2.22073, 0)
 shape = SubResource("BoxShape3D_11alf")
 
 [node name="WallLeftCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09173, 2.75557, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30218, -0.686403, 0)
 shape = SubResource("BoxShape3D_11alf")
 
 [node name="WallBackCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.41693, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22893, 4)
 shape = SubResource("BoxShape3D_xq5yt")
 
 [node name="RUM" parent="PlayArea" instance=ExtResource("1_hvdcx")]
@@ -61,9 +65,25 @@ shape = SubResource("CylinderShape3D_kbi1m")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlayArea"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.00850534, 2.7426, -0.00426292)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayArea"]
+[node name="LoftCollision" type="CollisionShape3D" parent="PlayArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353193, 3.71654, -0.0330648)
 shape = SubResource("BoxShape3D_kb4rk")
+
+[node name="WallLeftCollision2" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24737, 2.6795, 0)
+shape = SubResource("BoxShape3D_11alf")
+
+[node name="WallLeftCollision3" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50024, 0.992223, -1.66166)
+shape = SubResource("BoxShape3D_1m4ft")
+
+[node name="WallLeftCollision4" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50024, 0.992223, 5.68681)
+shape = SubResource("BoxShape3D_1m4ft")
+
+[node name="WallLeftCollision5" type="CollisionShape3D" parent="PlayArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00486, 0.992223, 2.11894)
+shape = SubResource("BoxShape3D_1m4ft")
 
 [node name="Chest1" parent="." instance=ExtResource("3_s0mkq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.4626, 0.00566933, 3.67326)
@@ -81,7 +101,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 1.50737,
 transform = Transform3D(0.881287, 0.472582, 0, -0.472582, 0.881287, 0, 0, 0, 1, -1.82601, 1.08816, -2.37776)
 
 [node name="Torch2" parent="." instance=ExtResource("6_8m4eu")]
-transform = Transform3D(-0.881303, -0.472551, -8.74228e-08, -0.472551, 0.881303, 0, 7.7046e-08, 4.13117e-08, -1, 1.87162, 1.08816, -2.37776)
+transform = Transform3D(-0.881303, -0.472551, -8.74228e-08, -0.472551, 0.881303, 0, 7.7046e-08, 4.13117e-08, -1, 1.87162, 1.08816, -0.142673)
 
 [node name="Torch3" parent="." instance=ExtResource("6_8m4eu")]
 transform = Transform3D(-3.8523e-08, -2.06559e-08, 1, -0.472551, 0.881303, 0, -0.881303, -0.472551, -4.37114e-08, -1.09573, 1.08816, 3.89983)
@@ -91,3 +111,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56709, 0.122732, -3.55633)
 
 [node name="objects3" parent="." instance=ExtResource("8_i0gxd")]
 transform = Transform3D(0.0213087, 0, -0.999773, 0, 1, 0, 0.999773, 0, 0.0213087, 1.64067, 0.0128977, 1.10125)
+
+[node name="PipesPuzzle2" parent="." instance=ExtResource("9_beefc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.00257, 0.541626, -2.28457)
+
+[node name="ObjectPuzzle1" parent="." instance=ExtResource("10_q36ml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30448, 0.532128, 2.00226)

@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://c58k6p2whrdof"]
+
+[ext_resource type="PackedScene" uid="uid://cj21oaoaigccl" path="res://Objects/P2_snap_zone_1.tscn" id="1_uos4e"]
+[ext_resource type="PackedScene" uid="uid://db6kwl0kc35l4" path="res://Objects/P2_snap_zone_2.tscn" id="2_t1beg"]
+[ext_resource type="PackedScene" uid="uid://b2ig003gi8kf" path="res://Objects/P2_snap_zone_3.tscn" id="3_epvgl"]
+[ext_resource type="PackedScene" uid="uid://cyfybl5xexcux" path="res://Objects/pipe_1.tscn" id="4_w7vcr"]
+[ext_resource type="PackedScene" uid="uid://do2ynix1xr7l7" path="res://Objects/pipe_2.tscn" id="5_bvvad"]
+[ext_resource type="PackedScene" uid="uid://dp4jt82mputxa" path="res://Objects/pipe_3.tscn" id="6_55sem"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vaapi"]
+size = Vector3(2.5, 1.5, 0.5)
+
+[node name="Pipes_puzzle2" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524139, 0)
+shape = SubResource("BoxShape3D_vaapi")
+
+[node name="P2_SnapZone1" parent="." instance=ExtResource("1_uos4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="P2_SnapZone2" parent="." instance=ExtResource("2_t1beg")]
+
+[node name="P2_SnapZone3" parent="." instance=ExtResource("3_epvgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Pipe1" parent="." instance=ExtResource("4_w7vcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="Pipe2" parent="." instance=ExtResource("5_bvvad")]
+
+[node name="Pipe3" parent="." instance=ExtResource("6_55sem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)

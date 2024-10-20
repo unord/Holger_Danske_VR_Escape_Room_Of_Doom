@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp4jt82mputxa"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ibqy0"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="2_kdtdu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p0iwr"]
+height = 0.3
+radius = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_habev"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.3
+
+[node name="Pipe3" groups=["Pipe3"] instance=ExtResource("1_ibqy0")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CylinderShape3D_p0iwr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("CylinderMesh_habev")
+
+[node name="GrabPointSnap" parent="." index="2" instance=ExtResource("2_kdtdu")]

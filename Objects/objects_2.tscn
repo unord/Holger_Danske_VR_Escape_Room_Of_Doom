@@ -10,17 +10,17 @@ radius = 0.378208
 
 [node name="objects2" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Tønde" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tønde"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14577e-05, 0.346818, 0.0034492)
 shape = SubResource("CylinderShape3D_32m0r")
 
-[node name="Tønde" parent="StaticBody3D" instance=ExtResource("1_wh5c2")]
+[node name="Tønde" parent="Tønde" instance=ExtResource("1_wh5c2")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.234136, 0)
 
 [node name="Mirror" parent="." instance=ExtResource("1_2rtvf")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.179307, 0.966067, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.179307, 0.980922, 0)
 
 [node name="Powder" parent="." instance=ExtResource("3_4nbdy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173277, 0.983107, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173277, 0.992933, 0)

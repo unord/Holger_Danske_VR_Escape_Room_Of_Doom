@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmwhsr3rsuwhq"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_x47nc"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="2_scfc4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grf87"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkm7w"]
+albedo_color = Color(0, 0.027451, 1, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_t1mai"]
+material = SubResource("StandardMaterial3D_fkm7w")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Trekant" groups=["Geometry", "Trekant"] instance=ExtResource("1_x47nc")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_grf87")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" groups=["Geometry"]]
+mesh = SubResource("PrismMesh_t1mai")
+
+[node name="GrabPointSnap" parent="." index="2" instance=ExtResource("2_scfc4")]

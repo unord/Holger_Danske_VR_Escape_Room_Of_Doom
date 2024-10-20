@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ceml4kdlcefia" path="res://Objects/Knogle kort.glb" id="2_ks2wq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q1v2b"]
+margin = 0.01
 radius = 0.066
 height = 0.34
 

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d12u5np3ecw33" path="res://Objects/Mirror.glb" id="2_0cyn7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i4sx7"]
+margin = 0.01
 size = Vector3(0.095459, 0.674377, 0.328613)
 
 [node name="Mirror" instance=ExtResource("1_68kuj")]

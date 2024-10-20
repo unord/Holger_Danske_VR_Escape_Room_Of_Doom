@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://6us7qc0m0m3x" path="res://Objects/flaskepost1.glb" id="2_4btpt"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0ng18"]
+margin = 0.01
 height = 4.58803
 radius = 0.952372
 

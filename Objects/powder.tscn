@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cb08q2ektkgsr" path="res://Objects/Powder.glb" id="2_kmx7m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7e4xq"]
+margin = 0.01
 size = Vector3(0.111877, 0.058548, 0.109375)
 
 [node name="Powder" instance=ExtResource("1_tgp28")]
