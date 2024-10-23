@@ -63,7 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389381, 0)
 shape = SubResource("CylinderShape3D_kbi1m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.00850534, 2.7426, -0.00426292)
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.00850534, 2.54365, -0.00426292)
 
 [node name="LoftCollision" type="CollisionShape3D" parent="PlayArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0353193, 3.71654, -0.0330648)

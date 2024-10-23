@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfe1babf4ghhu"]
+[gd_scene load_steps=10 format=3 uid="uid://cfe1babf4ghhu"]
 
 [ext_resource type="PackedScene" uid="uid://m5xnmoetgnxl" path="res://Objects/firkant.tscn" id="1_4ieow"]
 [ext_resource type="PackedScene" uid="uid://dcmj37abfl6lu" path="res://Objects/P1_snap_zone_1.tscn" id="2_sbkf8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cov383cjd1qb3" path="res://Objects/P1_snap_zone_4.tscn" id="6_5xpab"]
 [ext_resource type="PackedScene" uid="uid://cmwhsr3rsuwhq" path="res://Objects/trekant.tscn" id="7_77i66"]
 [ext_resource type="PackedScene" uid="uid://ddykmc0w7b75j" path="res://Objects/kugle.tscn" id="8_3ryje"]
+[ext_resource type="PackedScene" uid="uid://bpbfqmgeaa6ok" path="res://Objects/key.tscn" id="9_uikk3"]
 
 [node name="ObjectPuzzle1" type="Node3D"]
 
@@ -16,21 +17,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.560272)
 
 [node name="SnapZone1" parent="." instance=ExtResource("2_sbkf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.560272)
+snap_exclude = "Trekant"
 
 [node name="Cylinder" parent="." instance=ExtResource("4_yekc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17108)
 
 [node name="SnapZone2" parent="." instance=ExtResource("3_uihmd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17108)
+snap_exclude = "Kugle"
 
 [node name="SnapZone3" parent="." instance=ExtResource("5_m70o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.214806)
+snap_exclude = "Square"
 
 [node name="SnapZone4" parent="." instance=ExtResource("6_5xpab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.595358)
+snap_exclude = "Cylinder"
 
 [node name="Trekant" parent="." instance=ExtResource("7_77i66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.58846)
 
 [node name="Kugle" parent="." instance=ExtResource("8_3ryje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.212323)
+
+[node name="SnapZone1_True" parent="." instance=ExtResource("2_sbkf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.560272)
+snap_require = "Trekant"
+
+[node name="SnapZone2_True" parent="." instance=ExtResource("3_uihmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.17108)
+snap_require = "Kugle"
+
+[node name="SnapZone3_True" parent="." instance=ExtResource("5_m70o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.214806)
+snap_require = "Square"
+
+[node name="SnapZone4_True" parent="." instance=ExtResource("6_5xpab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.595358)
+snap_require = "Cylinder"
+
+[node name="Key" parent="." instance=ExtResource("9_uikk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.890938, 0.135689)

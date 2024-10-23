@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://y73ebuqa2eg0"
-path="res://.godot/imported/Spejl.glb-0a547a4319195f3e83d0766684cb9e41.scn"
+path="res://.godot/imported/Spejl.glb-acfc0838c920836dfe625d3920b0610f.scn"
 
 [deps]
 
-source_file="res://Spejl.glb"
-dest_files=["res://.godot/imported/Spejl.glb-0a547a4319195f3e83d0766684cb9e41.scn"]
+source_file="res://Objects/Spejl.glb"
+dest_files=["res://.godot/imported/Spejl.glb-acfc0838c920836dfe625d3920b0610f.scn"]
 
 [params]
 
