@@ -2,22 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_exii5"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="2_m0tvd"]
+[ext_resource type="PackedScene" uid="uid://qovtkob25c4r" path="res://Objects/rør2.glb" id="3_nmq8i"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_p0iwr"]
-height = 0.3
-radius = 0.1
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_habev"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.3
+height = 0.405943
+radius = 0.155386
 
 [node name="Pipe2" groups=["Pipe2"] instance=ExtResource("1_exii5")]
 
 [node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.0150384, 0, 0.00637231)
 shape = SubResource("CylinderShape3D_p0iwr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
-mesh = SubResource("CylinderMesh_habev")
+[node name="GrabPointSnap" parent="." index="1" instance=ExtResource("2_m0tvd")]
 
-[node name="GrabPointSnap" parent="." index="2" instance=ExtResource("2_m0tvd")]
+[node name="rør2" parent="." index="2" instance=ExtResource("3_nmq8i")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0.0190463, 0, -0.387534)

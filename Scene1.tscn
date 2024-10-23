@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18222, -4)
 shape = SubResource("BoxShape3D_xq5yt")
 
 [node name="WallRightCollision" type="CollisionShape3D" parent="PlayArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10549, 2.22073, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31137, 1.1116, 0)
 shape = SubResource("BoxShape3D_11alf")
 
 [node name="WallLeftCollision" type="CollisionShape3D" parent="PlayArea"]
@@ -113,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56709, 0.122732, -3.55633)
 transform = Transform3D(0.0213087, 0, -0.999773, 0, 1, 0, 0.999773, 0, 0.0213087, 1.64067, 0.0128977, 1.10125)
 
 [node name="PipesPuzzle2" parent="." instance=ExtResource("9_beefc")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.00257, 0.541626, -2.28457)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 1.55339, 0.926507, -2.28457)
 
 [node name="ObjectPuzzle1" parent="." instance=ExtResource("10_q36ml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30448, 0.532128, 2.00226)

@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpbfqmgeaa6ok"]
+[gd_scene load_steps=5 format=3 uid="uid://bpbfqmgeaa6ok"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_beaqn"]
 [ext_resource type="PackedScene" uid="uid://ckreracxb56om" path="res://Objects/key.glb" id="2_1722x"]
+[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="3_nhqum"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xyfxv"]
-margin = 0.01
-size = Vector3(0.037262, 0.0300293, 0.345963)
+margin = 0.1
+size = Vector3(0.0718765, 0.0529175, 0.362923)
 
 [node name="Key" groups=["Key"] instance=ExtResource("1_beaqn")]
 freeze = true
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000991821, -0.00305176, -0.0552139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00862934, -0.00216675, -0.063694)
 shape = SubResource("BoxShape3D_xyfxv")
 
 [node name="key" parent="." index="1" instance=ExtResource("2_1722x")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="GrabPointSnap" parent="." index="2" instance=ExtResource("3_nhqum")]

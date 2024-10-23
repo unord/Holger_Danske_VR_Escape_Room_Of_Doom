@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c58k6p2whrdof"]
+[gd_scene load_steps=11 format=3 uid="uid://c58k6p2whrdof"]
 
 [ext_resource type="PackedScene" uid="uid://cj21oaoaigccl" path="res://Objects/P2_snap_zone_1.tscn" id="1_uos4e"]
 [ext_resource type="PackedScene" uid="uid://db6kwl0kc35l4" path="res://Objects/P2_snap_zone_2.tscn" id="2_t1beg"]
@@ -6,30 +6,49 @@
 [ext_resource type="PackedScene" uid="uid://cyfybl5xexcux" path="res://Objects/pipe_1.tscn" id="4_w7vcr"]
 [ext_resource type="PackedScene" uid="uid://do2ynix1xr7l7" path="res://Objects/pipe_2.tscn" id="5_bvvad"]
 [ext_resource type="PackedScene" uid="uid://dp4jt82mputxa" path="res://Objects/pipe_3.tscn" id="6_55sem"]
+[ext_resource type="PackedScene" uid="uid://bpbfqmgeaa6ok" path="res://Objects/key.tscn" id="7_8ndai"]
+[ext_resource type="Script" path="res://Objects/key2.gd" id="8_qbjyt"]
+[ext_resource type="PackedScene" uid="uid://bknpmygacglyi" path="res://Objects/rørhel.glb" id="12_3xc8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vaapi"]
-size = Vector3(2.5, 1.5, 0.5)
+size = Vector3(2.5, 1.5, 0.145996)
 
 [node name="Pipes_puzzle2" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524139, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524139, -0.897679)
 shape = SubResource("BoxShape3D_vaapi")
 
+[node name="rørhel" parent="StaticBody3D" instance=ExtResource("12_3xc8d")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0, 0, 0.993629)
+
 [node name="P2_SnapZone1" parent="." instance=ExtResource("1_uos4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.810564, 0.472456, 0)
 
 [node name="P2_SnapZone2" parent="." instance=ExtResource("2_t1beg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0496255, 0, 0)
 
 [node name="P2_SnapZone3" parent="." instance=ExtResource("3_epvgl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646457, -0.743414, 0)
 
 [node name="Pipe1" parent="." instance=ExtResource("4_w7vcr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31214, 0.383877, 1.08729)
 
 [node name="Pipe2" parent="." instance=ExtResource("5_bvvad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86112, 0, 2.38882)
 
 [node name="Pipe3" parent="." instance=ExtResource("6_55sem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.780127, 0, 0.0168502)
+
+[node name="Key" parent="." instance=ExtResource("7_8ndai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67648, 2.19525, 1.82946)
+script = ExtResource("8_qbjyt")
+
+[connection signal="has_dropped" from="P2_SnapZone1" to="Key" method="_on_p_2_snap_zone_1_has_dropped"]
+[connection signal="has_picked_up" from="P2_SnapZone1" to="Key" method="_on_p_2_snap_zone_1_has_picked_up"]
+[connection signal="has_dropped" from="P2_SnapZone2" to="Key" method="_on_p_2_snap_zone_2_has_dropped"]
+[connection signal="has_picked_up" from="P2_SnapZone2" to="Key" method="_on_p_2_snap_zone_2_has_picked_up"]
+[connection signal="has_dropped" from="P2_SnapZone3" to="Key" method="_on_p_2_snap_zone_3_has_dropped"]
+[connection signal="has_picked_up" from="P2_SnapZone3" to="Key" method="_on_p_2_snap_zone_3_has_picked_up"]
