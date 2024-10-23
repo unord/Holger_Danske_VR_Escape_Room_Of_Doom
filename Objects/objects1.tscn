@@ -29,7 +29,7 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313946, 0.771027, 0.264181)
 
 [node name="Chair" parent="." instance=ExtResource("4_1vkqd")]
-transform = Transform3D(0.988481, 0, 0.151347, 0, 1, 0, -0.151347, 0, 0.988481, -1.2722, 0, 0.499878)
+transform = Transform3D(0.988481, 0, 0.151347, 0, 1, 0, -0.151347, 0, 0.988481, -1.2722, 0, 0.666443)
 
 [node name="Chair2" parent="." instance=ExtResource("4_1vkqd")]
 transform = Transform3D(0.409557, 0, 0.912285, 0, 1, 0, -0.912285, 0, 0.409557, -0.0780272, 0, 0.600431)
@@ -41,10 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63163, 0.717051, 0.14271)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70339, 0.739416, -0.297926)
 
 [node name="Dokument1" parent="." instance=ExtResource("6_ojiho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848044, 0.778397, 0.221346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.811307, 1.10491, 0.169274)
 
 [node name="Dokument2" parent="." instance=ExtResource("7_yhvme")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14377, 0.793253, 0.234563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14377, 1.0206, 0.153549)
 
 [node name="Bog1" parent="." instance=ExtResource("8_l1dc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.358104, 0.761777, -0.287791)

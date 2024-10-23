@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bupx6uoroux38" path="res://Objects/Dokument til figurer.glb" id="2_eilkd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sk4vw"]
-size = Vector3(0.233521, 0.0107422, 0.31665)
+size = Vector3(0.233521, 0.0151367, 0.31665)
 
 [node name="Dokument1" instance=ExtResource("1_gytjw")]
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00519538, 0.00146484, 4.26471e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00519538, -0.000732423, 4.26471e-05)
 shape = SubResource("BoxShape3D_sk4vw")
 
 [node name="Dokument til figurer" parent="." index="1" instance=ExtResource("2_eilkd")]
