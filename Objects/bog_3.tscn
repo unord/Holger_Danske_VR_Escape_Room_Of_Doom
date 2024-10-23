@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://sejetjqnk44u"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_3shk5"]
+[ext_resource type="PackedScene" uid="uid://cu2vnrqjawqc7" path="res://Objects/bog3.glb" id="2_dwuwj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmjeo"]
+size = Vector3(0.112732, 0.0521088, 0.15625)
+
+[node name="Bog3" instance=ExtResource("1_3shk5")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000823975, 0.000709534, 0.000976563)
+shape = SubResource("BoxShape3D_nmjeo")
+
+[node name="bog3" parent="." index="1" instance=ExtResource("2_dwuwj")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0juwjmom87hi"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_5tsst"]
+[ext_resource type="PackedScene" uid="uid://cgscocuqvvj3n" path="res://Objects/Billedetilbord.glb" id="2_b8t3c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dntp"]
+size = Vector3(0.175659, 0.111267, 0.0891724)
+
+[node name="Billede" instance=ExtResource("1_5tsst")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003479, 0.0467834, -0.0144348)
+shape = SubResource("BoxShape3D_3dntp")
+
+[node name="Billedetilbord" parent="." index="1" instance=ExtResource("2_b8t3c")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

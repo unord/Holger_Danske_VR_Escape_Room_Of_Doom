@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://e7wxmwd3ae4s"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_3qiwm"]
+[ext_resource type="PackedScene" uid="uid://bck1bh2w1j5k8" path="res://Objects/Dokument til symbolfakkel.glb" id="2_ym5e0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xcse"]
+size = Vector3(0.220612, 0.0192871, 0.317322)
+
+[node name="Dokument2" instance=ExtResource("1_3qiwm")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00144958, 0.0032959, -0.00546265)
+shape = SubResource("BoxShape3D_6xcse")
+
+[node name="Dokument til symbolfakkel" parent="." index="1" instance=ExtResource("2_ym5e0")]

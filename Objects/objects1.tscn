@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5eyndop7qs5i"]
+[gd_scene load_steps=12 format=3 uid="uid://c5eyndop7qs5i"]
 
 [ext_resource type="PackedScene" uid="uid://qqbrx3650byx" path="res://Objects/Bord1.glb" id="1_e6lme"]
 [ext_resource type="PackedScene" uid="uid://hkuj5ffsc4cw" path="res://Objects/chair.tscn" id="4_1vkqd"]
 [ext_resource type="PackedScene" uid="uid://d11makoivo5b1" path="res://Objects/flaske.tscn" id="4_837ah"]
 [ext_resource type="PackedScene" uid="uid://6hrol1otxtnw" path="res://Objects/mug.tscn" id="4_to6gg"]
+[ext_resource type="PackedScene" uid="uid://c0juwjmom87hi" path="res://Objects/billede.tscn" id="5_sh3gw"]
+[ext_resource type="PackedScene" uid="uid://mnb0b0a7pbqm" path="res://Objects/dokument_1.tscn" id="6_ojiho"]
+[ext_resource type="PackedScene" uid="uid://e7wxmwd3ae4s" path="res://Objects/dokument_2.tscn" id="7_yhvme"]
+[ext_resource type="PackedScene" uid="uid://b6rbsbqx6suy1" path="res://Objects/bog_1.tscn" id="8_l1dc0"]
+[ext_resource type="PackedScene" uid="uid://dm8bs4xmobcw6" path="res://Objects/bog_2.tscn" id="9_ulbc6"]
+[ext_resource type="PackedScene" uid="uid://sejetjqnk44u" path="res://Objects/bog_3.tscn" id="10_qhvwe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6x3w"]
 size = Vector3(2.58661, 0.104675, 0.993821)
@@ -30,3 +36,21 @@ transform = Transform3D(0.409557, 0, 0.912285, 0, 1, 0, -0.912285, 0, 0.409557, 
 
 [node name="Mug" parent="." instance=ExtResource("4_to6gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63163, 0.717051, 0.14271)
+
+[node name="Billede" parent="." instance=ExtResource("5_sh3gw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70339, 0.739416, -0.297926)
+
+[node name="Dokument1" parent="." instance=ExtResource("6_ojiho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.848044, 0.778397, 0.221346)
+
+[node name="Dokument2" parent="." instance=ExtResource("7_yhvme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14377, 0.793253, 0.234563)
+
+[node name="Bog1" parent="." instance=ExtResource("8_l1dc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.358104, 0.761777, -0.287791)
+
+[node name="Bog2" parent="." instance=ExtResource("9_ulbc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75074, -0.300436)
+
+[node name="Bog3" parent="." instance=ExtResource("10_qhvwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119755, 0.817153, -0.291968)
